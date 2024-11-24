@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
@@ -52,7 +53,7 @@
 
     <link rel="stylesheet" id="colors" />
   </head>
-  <body>
+  <body onload="generateCaptcha()">
     <!-- Preloader -->
     <div class="preloader">
       <div class="loader">
@@ -130,7 +131,7 @@
                        <li>
                          <a href="support.html">Support</a>
                        </li>
-                       <li class="active"><a href="contact.html">Contact Us</a></li>
+                       <li class="active"><a href="contact.php">Contact Us</a></li>
                      </ul>
                    </nav>
                  </div>
@@ -188,67 +189,104 @@
             <div class="col-lg-6">
               <div class="contact-us-form">
                 <h2>Contact With Us</h2>
-                <p>
-                  If you have any questions please fell free to contact with us.
-                </p>
+                <p>If you have any questions please feel free to contact with us.</p>
+
+                <!-- Display Success or Error Message -->
+              <?php if (isset($_SESSION['success_message'])): ?>
+                <div class="alert alert-success">
+                  <?= $_SESSION['success_message']; ?>
+                </div>
+                <?php unset($_SESSION['success_message']); ?>
+              <?php elseif (isset($_SESSION['error_message'])): ?>
+                <div class="alert alert-danger">
+                  <?= $_SESSION['error_message']; ?>
+                </div>
+                <?php unset($_SESSION['error_message']); ?>
+              <?php endif; ?>
+              
                 <!-- Form -->
-                <form class="form" method="post" action="#">
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          name="name"
-                          placeholder="Name"
-                          required=""
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <input
-                          type="email"
-                          name="email"
-                          placeholder="Email"
-                          required=""
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          name="phone"
-                          placeholder="Phone"
-                          required=""
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="form-group">
-                        <input
-                          type="text"
-                          name="subject"
-                          placeholder="Subject"
-                          required=""
-                        />
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="form-group">
-                        <textarea
-                          name="message"
-                          placeholder="Your Message"
-                          required=""
-                        ></textarea>
-                      </div>
-                    </div>
-                    <div class="col-12">
-                      <div class="form-group login-btn">
-                        <button class="btn" type="submit">Send</button>
-                      </div>
-                    </div>
-                  </div>
+                <form class="form" method="post" action="submit.php">
+                <div class="row">
+          <div class="col-lg-6">
+            <div class="form-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="Name"
+                value="<?= $_SESSION['old']['name'] ?? '' ?>"
+                required=""
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value="<?= $_SESSION['old']['email'] ?? '' ?>"
+                required=""
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <input
+                type="text"
+                name="phone"
+                placeholder="Phone"
+                value="<?= $_SESSION['old']['phone'] ?? '' ?>"
+                required=""
+              />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-group">
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                value="<?= $_SESSION['old']['subject'] ?? '' ?>"
+                required=""
+              />
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="form-group">
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                required=""
+              ><?= $_SESSION['old']['message'] ?? '' ?></textarea>
+            </div>
+          </div>
+          <!-- Simple Text CAPTCHA -->
+          <div class="col-lg-12">
+            <div class="form-group">
+              <label for="captcha">
+                Please type the following text: <strong id="captcha-text"></strong>
+              </label>
+              <input
+                type="hidden"
+                id="expected_captcha"
+                name="expected_captcha" 
+              />
+
+              <input
+                type="text"
+                id="captcha"
+                name="captcha"
+                placeholder="Enter text here"
+                required=""
+              />
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group login-btn">
+              <button class="btn" type="submit">Send</button>
+            </div>
+          </div>
+        </div>
                 </form>
                 <!--/ End Form -->
               </div>
@@ -339,7 +377,7 @@
                         >
                       </li>
                       <li>
-                        <a href="contact.html"
+                        <a href="contact.php"
                           ><i class="fa fa-caret-right" aria-hidden="true"></i
                           >Contact Us</a
                         >
@@ -369,6 +407,23 @@
     </footer>
     <!--/ End Footer Area -->
 
+    <script>
+      // Generate a random CAPTCHA text
+      function generateCaptcha() {
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        let captcha = "";
+        for (let i = 0; i < 6; i++) {
+          captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        document.getElementById("captcha-text").textContent = captcha;
+        document.getElementById("expected_captcha").value = captcha;
+
+      }
+    
+      // Generate CAPTCHA on page load
+      window.onload = generateCaptcha;
+    </script>
+    
     <!-- jquery Min JS -->
     <script src="js/jquery.min.js"></script>
     <!-- jquery Migrate JS -->
@@ -408,5 +463,5 @@
     <script src="js/main.js"></script>
   </body>
 
-<!-- Mirrored from mediplus-html.vercel.app/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Nov 2024 15:17:14 GMT -->
+<!-- Mirrored from mediplus-html.vercel.app/contact.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Nov 2024 15:17:14 GMT -->
 </html>

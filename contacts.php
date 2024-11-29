@@ -213,7 +213,7 @@
                         >
                       </li>
                       <li>
-                        <a href="contact.html"
+                        <a href="contact.php"
                           ><i class="fa fa-caret-right" aria-hidden="true"></i
                           >Contact Us</a
                         >
@@ -324,5 +324,5 @@
     <script src="js/main.js"></script>
   </body>
 
-<!-- Mirrored from mediplus-html.vercel.app/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Nov 2024 15:17:14 GMT -->
+<!-- Mirrored from mediplus-html.vercel.app/contact.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Nov 2024 15:17:14 GMT -->
 </html>

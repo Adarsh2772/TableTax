@@ -120,6 +120,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     // Redirect back to the contact page
-    header("Location: contact.html");
+    header("Location: contact.php");
     exit;
 }

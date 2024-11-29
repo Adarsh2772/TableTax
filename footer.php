@@ -78,7 +78,7 @@
                         >
                       </li>
                       <li>
-                        <a href="contact.html"
+                        <a href="contact.php"
                           ><i class="fa fa-caret-right" aria-hidden="true"></i
                           >Contact Us</a
                         >

@@ -133,7 +133,7 @@
                       <li>
                         <a href="support.html">Support</a>
                       </li>
-                      <li><a href="contact.php">Contact Us</a></li>
+                      <li><a href="contacts.html">Contact Us</a></li>
                     </ul>
                   </nav>
                 </div>
@@ -381,7 +381,7 @@
                         >
                       </li>
                       <li>
-                        <a href="contact.php"
+                        <a href="contacts.html"
                           ><i class="fa fa-caret-right" aria-hidden="true"></i
                           >Contact Us</a
                         >
@@ -488,5 +488,5 @@
     
   </body>
 
-<!-- Mirrored from mediplus-html.vercel.app/contact.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Nov 2024 15:17:14 GMT -->
+<!-- Mirrored from mediplus-html.vercel.app/contacts.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 16 Nov 2024 15:17:14 GMT -->
 </html>

@@ -75,7 +75,7 @@
                       <li>
                         <a href="support.html">Support</a>
                       </li>
-                      <li><a href="contact.php">Contact Us</a></li>
+                      <li><a href="contacts.html">Contact Us</a></li>
                     </ul>
                   </nav>
                 </div>

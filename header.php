@@ -50,8 +50,8 @@
               <div class="col-lg-3 col-md-3 col-12">
                 <!-- Start Logo -->
                 <div class="logo">
-                  <a href="index.php"><img src="img/TTlogo.png" alt="Table Tax Logo" class="mb-3" style="height: 90px;" /></a>
-                   <!-- <a href="index.php" style="font-size: 26px;"><b style="color: #1a76d1;font-size: 26px;">Table</b><b>Tax</b></a> -->
+                  <a href="index.html"><img src="img/TTlogo.png" alt="Table Tax Logo" class="mb-3" style="height: 90px;" /></a>
+                   <!-- <a href="index.html" style="font-size: 26px;"><b style="color: #1a76d1;font-size: 26px;">Table</b><b>Tax</b></a> -->
                 </div>
                 <!-- End Logo -->
                 <!-- Mobile Nav -->
@@ -67,15 +67,15 @@
                         <a href="#">Home</a>
                       </li>
                       <li>
-                        <a href="works.php">How It Works</a>
+                        <a href="works.html">How It Works</a>
                       </li>
                       <li>
-                        <a href="index.php#Pricing">Pricing</a>
+                        <a href="index.html#Pricing">Pricing</a>
                       </li>
                       <li>
-                        <a href="support.php">Support</a>
+                        <a href="support.html">Support</a>
                       </li>
-                      <li><a href="contact.php">Contact Us</a></li>
+                      <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                   </nav>
                 </div>
@@ -83,7 +83,7 @@
               </div>
               <div class="col-lg-2 col-12">
                 <div class="get-quote">
-                  <a href="login.php" class="btn">
+                  <a href="login.html" class="btn">
                     <i class="icofont-login"></i> Login
                   </a>
                 </div>

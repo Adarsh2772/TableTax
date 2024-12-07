@@ -391,7 +391,7 @@
                     </div>
                     <h4 class="title">Basic</h4>
                     <div class="price">
-                      <p class="amount">$0</p>
+                      <!-- <p class="amount">$0</p> -->
                     </div>
                   </div>
                   <!-- Table List -->
@@ -416,7 +416,9 @@
                     </li>
                   </ul>
                   <div class="table-bottom">
-                    <a class="btn" href="#">Get Started</a>
+                    <button class="btn" data-bs-toggle="modal" data-bs-target="#contactModal">
+                      Get Started
+                    </button>
                   </div>
                   <!-- Table Bottom -->
                 </div>
@@ -436,7 +438,7 @@
                     </div>
                     <h4 class="title">Deluxe</h4>
                     <div class="price">
-                      <p class="amount">$0</p>
+                      <!-- <p class="amount">$0</p> -->
                     </div>
                   </div>
                   <!-- Table List -->
@@ -481,7 +483,7 @@
                     </div>
                     <h4 class="title">Premium</h4>
                     <div class="price">
-                      <p class="amount">$0</p>
+                      <!-- <p class="amount">$0</p> -->
                     </div>
                   </div>
                   <!-- Table List -->
@@ -514,6 +516,69 @@
               <!-- End Single Table-->
             </div>
           </div>
+
+          <!-- Modal -->
+<div
+class="modal fade"
+id="contactModal"
+tabindex="-1"
+aria-labelledby="contactModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="contactModalLabel">Basic</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <form id="contactForm">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control p-2"
+            placeholder="Enter Your Name"
+            id="name"
+            name="name"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email ID</label>
+          <input
+            type="email"
+            class="form-control p-2"
+            placeholder="Enter Email ID"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="contact" class="form-label">Contact No</label>
+          <input
+            type="text"
+            class="form-control p-2"
+            placeholder="Enter Contact No"
+            id="contact"
+            name="contact"
+            required
+            pattern="[0-9]{10}"
+            title="Enter a valid 10-digit number"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
         </section>
         <!--/ End Pricing Table -->
 
